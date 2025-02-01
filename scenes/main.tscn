@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://tih0yk583r8n"]
+[gd_scene load_steps=7 format=3 uid="uid://tih0yk583r8n"]
 
 [ext_resource type="PackedScene" uid="uid://doh5n0aotlm4m" path="res://models/burger.glb" id="1_1qk2l"]
 [ext_resource type="Script" path="res://scripts/quest_init.gd" id="1_21oso"]
 [ext_resource type="PackedScene" uid="uid://w8aprs6l37fb" path="res://models/controllers/left_controller.glb" id="2_lkh2b"]
 [ext_resource type="Script" path="res://scripts/manager.gd" id="2_luikw"]
 [ext_resource type="PackedScene" uid="uid://c20l56ixkf0kv" path="res://models/controllers/right_controller.glb" id="3_3082j"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="6_yjovc"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_21oso")
@@ -12,6 +13,74 @@ script = ExtResource("1_21oso")
 [node name="manager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_luikw")
+
+[node name="path" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="path_0" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99409, 0, -3.00934)
+visible = false
+radius = 0.1
+
+[node name="path_1" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.998703, 0, -3.00934)
+visible = false
+radius = 0.1
+
+[node name="path_2" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.998703, 0, -3.99438)
+visible = false
+radius = 0.1
+
+[node name="path_3" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.998703, 0, -4.99716)
+visible = false
+radius = 0.1
+
+[node name="path_4" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0116826, 0, -4.98967)
+visible = false
+radius = 0.1
+
+[node name="path_5" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.986061, 0, -4.98967)
+visible = false
+radius = 0.1
+
+[node name="path_6" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01996, 0, -4.98967)
+visible = false
+radius = 0.1
+
+[node name="path_7" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01996, 0, -4.07567)
+visible = false
+radius = 0.1
+
+[node name="path_8" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 0, -4.07567)
+visible = false
+radius = 0.1
+
+[node name="path_9" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 0, -3.02164)
+visible = false
+radius = 0.1
+
+[node name="path_10" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 0, -1.99663)
+visible = false
+radius = 0.1
+
+[node name="path_11" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99474, 0, -1.99663)
+visible = false
+radius = 0.1
+
+[node name="path_12" type="CSGSphere3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02489, 0, -1.99663)
+visible = false
+radius = 0.1
 
 [node name="vr_origin" type="XROrigin3D" parent="."]
 
@@ -32,4 +101,5 @@ pose = &"grip"
 transform = Transform3D(-1, 8.60946e-08, 1.51808e-08, 0, 0.173648, -0.984808, -8.74228e-08, -0.984808, -0.173648, 0, 0, -0.05)
 
 [node name="burger" parent="." instance=ExtResource("1_1qk2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.13916)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01449, 0, -3.13916)
+script = ExtResource("6_yjovc")
