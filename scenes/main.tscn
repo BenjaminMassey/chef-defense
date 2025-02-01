@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://tih0yk583r8n"]
+[gd_scene load_steps=6 format=3 uid="uid://tih0yk583r8n"]
 
 [ext_resource type="PackedScene" uid="uid://doh5n0aotlm4m" path="res://models/burger.glb" id="1_1qk2l"]
 [ext_resource type="Script" path="res://scripts/quest_init.gd" id="1_21oso"]
 [ext_resource type="PackedScene" uid="uid://w8aprs6l37fb" path="res://models/controllers/left_controller.glb" id="2_lkh2b"]
+[ext_resource type="Script" path="res://scripts/manager.gd" id="2_luikw"]
 [ext_resource type="PackedScene" uid="uid://c20l56ixkf0kv" path="res://models/controllers/right_controller.glb" id="3_3082j"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_21oso")
+
+[node name="manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_luikw")
 
 [node name="vr_origin" type="XROrigin3D" parent="."]
 
