@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://crjevb5rebq4u"]
+
+[ext_resource type="PackedScene" uid="uid://w8aprs6l37fb" path="res://models/controllers/left_controller.glb" id="1_qlqs0"]
+[ext_resource type="PackedScene" uid="uid://c20l56ixkf0kv" path="res://models/controllers/right_controller.glb" id="2_wms3g"]
+
+[node name="vr_origin" type="XROrigin3D"]
+
+[node name="vr_camera" type="XRCamera3D" parent="."]
+
+[node name="left_controller" type="XRController3D" parent="."]
+tracker = &"left_hand"
+pose = &"grip"
+
+[node name="left_controller_model" parent="left_controller" instance=ExtResource("1_qlqs0")]
+transform = Transform3D(-1, 8.60946e-08, 1.51808e-08, 0, 0.173648, -0.984808, -8.74228e-08, -0.984808, -0.173648, 0, 0, -0.05)
+
+[node name="right_controller" type="XRController3D" parent="."]
+tracker = &"right_hand"
+pose = &"grip"
+
+[node name="right_controller_model" parent="right_controller" instance=ExtResource("2_wms3g")]
+transform = Transform3D(-1, 8.60946e-08, 1.51808e-08, 0, 0.173648, -0.984808, -8.74228e-08, -0.984808, -0.173648, 0, 0, -0.05)

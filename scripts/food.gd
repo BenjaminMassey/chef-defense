@@ -8,9 +8,10 @@ func _process(delta):
 	move_path(delta);
 
 func move_path(delta):
-	if %path.get_child_count() < current_path:
+	var path = get_tree().current_scene.get_node("%path");
+	if path.get_child_count() < current_path:
 		return;
-	var target = %path.get_child(current_path);
+	var target = path.get_child(current_path);
 	if target == null:
 		return;
 	var target_position = target.global_position;

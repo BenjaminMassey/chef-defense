@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://tih0yk583r8n"]
+[gd_scene load_steps=6 format=3 uid="uid://tih0yk583r8n"]
 
-[ext_resource type="PackedScene" uid="uid://doh5n0aotlm4m" path="res://models/burger.glb" id="1_1qk2l"]
 [ext_resource type="Script" path="res://scripts/quest_init.gd" id="1_21oso"]
-[ext_resource type="PackedScene" uid="uid://w8aprs6l37fb" path="res://models/controllers/left_controller.glb" id="2_lkh2b"]
 [ext_resource type="Script" path="res://scripts/manager.gd" id="2_luikw"]
-[ext_resource type="PackedScene" uid="uid://c20l56ixkf0kv" path="res://models/controllers/right_controller.glb" id="3_3082j"]
-[ext_resource type="Script" path="res://scripts/food.gd" id="6_yjovc"]
+[ext_resource type="PackedScene" uid="uid://dousltkwf2c86" path="res://scenes/entry.tscn" id="3_46oja"]
+[ext_resource type="PackedScene" uid="uid://dsgy4xeisydbg" path="res://scenes/items.tscn" id="4_rd3rc"]
+[ext_resource type="PackedScene" uid="uid://crjevb5rebq4u" path="res://scenes/vr_origin.tscn" id="5_1g4ha"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_21oso")
@@ -18,7 +17,7 @@ script = ExtResource("2_luikw")
 unique_name_in_owner = true
 
 [node name="path_0" type="CSGSphere3D" parent="path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99409, 0, -3.00934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
 visible = false
 radius = 0.1
 
@@ -82,24 +81,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02489, 0, -1.99663)
 visible = false
 radius = 0.1
 
-[node name="vr_origin" type="XROrigin3D" parent="."]
+[node name="entry" parent="." instance=ExtResource("3_46oja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
 
-[node name="vr_camera" type="XRCamera3D" parent="vr_origin"]
+[node name="foods" type="Node" parent="."]
+unique_name_in_owner = true
 
-[node name="left_controller" type="XRController3D" parent="vr_origin"]
-tracker = &"left_hand"
-pose = &"grip"
+[node name="items" parent="." instance=ExtResource("4_rd3rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
 
-[node name="left_controller_model" parent="vr_origin/left_controller" instance=ExtResource("2_lkh2b")]
-transform = Transform3D(-1, 8.60946e-08, 1.51808e-08, 0, 0.173648, -0.984808, -8.74228e-08, -0.984808, -0.173648, 0, 0, -0.05)
-
-[node name="right_controller" type="XRController3D" parent="vr_origin"]
-tracker = &"right_hand"
-pose = &"grip"
-
-[node name="right_controller_model" parent="vr_origin/right_controller" instance=ExtResource("3_3082j")]
-transform = Transform3D(-1, 8.60946e-08, 1.51808e-08, 0, 0.173648, -0.984808, -8.74228e-08, -0.984808, -0.173648, 0, 0, -0.05)
-
-[node name="burger" parent="." instance=ExtResource("1_1qk2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01449, 0, -3.13916)
-script = ExtResource("6_yjovc")
+[node name="vr_origin" parent="." instance=ExtResource("5_1g4ha")]

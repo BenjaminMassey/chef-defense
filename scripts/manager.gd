@@ -5,7 +5,7 @@ static var current_level := 0;
 static var current_round := 0;
 
 func _ready():
-	call_deferred("init");
+	call_deferred("init"); # TODO: is deferred necessary?
 
 func init():
 	var file = FileAccess.open("res://data/data.json", FileAccess.READ);

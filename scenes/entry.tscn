@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dousltkwf2c86"]
+
+[ext_resource type="Script" path="res://scripts/bake.gd" id="1_ijgsp"]
+[ext_resource type="PackedScene" uid="uid://bqgsexdk1623t" path="res://models/oven.glb" id="2_amosb"]
+
+[node name="entry" type="Node3D"]
+script = ExtResource("1_ijgsp")
+
+[node name="oven" parent="." instance=ExtResource("2_amosb")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0)
